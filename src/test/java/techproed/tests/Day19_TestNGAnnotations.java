@@ -35,10 +35,6 @@ public class Day19_TestNGAnnotations {
      @Test(priority = 1) : Test caseleri onceliklendirmek icin kullanilir
      NOTE : default priority'nin degeri 0'a esittir
 
-
-
-
-
       */
 
     @BeforeSuite
