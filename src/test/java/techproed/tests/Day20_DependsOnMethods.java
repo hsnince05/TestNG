@@ -24,7 +24,7 @@ public class Day20_DependsOnMethods {
     }
 }
             /*
-            TestNG de tum  @Test metotlar bitbirlerinden bagimsiz olarak calisirlat
+            TestNG de tum  @Test metotlar bitbirlerinden bagimsiz olarak calisirlar
             Eger methodlari bagimli hale getirmek istersem, dependsOnMethods parametresi kullanilir
             Burdaki ornekde, searchTest methodu homeTest methoduna bagimlidir
             searchTest den once homeTest calisir
