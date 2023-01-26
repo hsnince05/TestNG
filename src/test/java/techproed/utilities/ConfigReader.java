@@ -2,7 +2,7 @@ package techproed.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 public class ConfigReader {
-    //Bu sinir configuration.properties file i okumak icin kullanilir
+    //Bu sinif configuration.properties file i okumak icin kullanilir
     // property file okumak icin properti objecsi kullanilir
     //This class reads the configuration.properties file
     //Create Properties instance

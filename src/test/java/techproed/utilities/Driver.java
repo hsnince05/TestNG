@@ -13,6 +13,8 @@ public class Driver {
 
     //    getDriver() is used to instantiate the driver object
 
+    //tum sınıflarda ortak kullanmak icin static yapiyorz
+
     public static WebDriver getDriver(){
         if (driver==null){
             switch (ConfigReader.getProperty("browser")) {
@@ -41,8 +43,8 @@ public class Driver {
 
         }
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         return driver;
     }

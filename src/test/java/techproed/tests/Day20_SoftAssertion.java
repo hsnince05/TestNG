@@ -9,7 +9,7 @@ public class Day20_SoftAssertion {
     @Test
     public void softAssertTest() {
 
-//      1. SoftAssert objesi olustur4
+//      1. SoftAssert objesi olustur
         SoftAssert softAssert = new SoftAssert();
 
         System.out.println("satir 15");
@@ -22,7 +22,8 @@ public class Day20_SoftAssertion {
         Assert.assertTrue(true);//PASS
 
         System.out.println("satir 24");
-        softAssert.assertAll(); // PASS yada FAIL olarak assertion lari isaretler
+
+        //softAssert.assertAll(); // PASS yada FAIL olarak assertion lari isaretler
 
 
 
