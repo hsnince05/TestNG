@@ -15,89 +15,91 @@ public class Day23_ExcelLogin {
 
     BlueRentalHomePage blueRentalHomePage;
     BlueRentalLoginPage blueRentalLoginPage;
-    ExcelUtils excelUtils ;
-    List<Map<String,String>> excelDatalari;
+    ExcelUtils excelUtils;
+    List<Map<String, String>> excelDatalari;
 
-
-
-    //Bu method login sayfasina gitmek icin kullanilacak
+    //    Bu metot login sayfasina gitmek icin kullanililacak
     public void login(){
-        //sayfaya git
+
+//        Sayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
 
-        // home page logine tikla
-        blueRentalHomePage = new BlueRentalHomePage();
+//        home page logine tikla
+        blueRentalHomePage= new BlueRentalHomePage();
         blueRentalLoginPage = new BlueRentalLoginPage();
 
-        //        ------SADECE ILK GIRIS-------
-//        loginLink butonu sadece ilk giriste sayfada gorunur
-//        Ikinci ve ucuncu girislerde sayfada gorunmeyeceginden NoSuchElementException alinir
-//        Biz bu exception'i try-catch kullanarak yakalariz ve test case calismaya devam eder
+//        ------SADECE ILK GIRIS---------
+//        loginLink butonu sadece ilk girisde sayfada gorunur
+//        ikinci ve ucunci girislerde sayfada gorunmeyeceginden NOSUCHELEMENTEXCEPTION alinir
+//        Biz bu exception u try catch kullanarak yakalariz ve test cases calismaya devam eder
         try {
+
             blueRentalHomePage.loginLink.click();
             ReusableMethods.waitFor(1);// 1 saniye bekle
+
+//        LOGIN SAYFASINDAYIZ
         }catch (Exception e){
         }
 
-
-        //      -------------SONRAKI GIRISLER------
+//      -------------SONRAKI GIRISLER------
         try{
+
 //            kullanici ID ye tikla      --->>> try catch
             blueRentalHomePage.userID.click();
             ReusableMethods.waitFor(1);
+
 //            Logout linkine tikla       --->>> try catch
             blueRentalHomePage.logOutLink.click();
             ReusableMethods.waitFor(1);
+
 //            OK e tikla                --->>> try catch
             blueRentalHomePage.OK.click();
             ReusableMethods.waitFor(1);
+
 //            home page logine tikla    --->>> try catch
             blueRentalHomePage.loginLink.click();
-            ReusableMethods.waitFor(1); // 1 saniye bekle
-            //LOGIN SAYFASİNDAYİZ
+            ReusableMethods.waitFor(1);
+
+            //        LOGIN SAYFASINDAYIZ
         }catch (Exception e){
         }
     }
-
-
-
     @Test
     public void customerLogin(){
 
-        String path = "./src/test/java/resources/mysmoketestdata.xlsx";
-//      ./ ONCEKI TUM DOSYALARI ICER. RELATIVE PATH.
+        String path="./src/test/java/resources/mysmoketestdata.xlsx";
+//        ./ ONCEKI TUM DOSYALARI ICER. RELATIVE PATH.
 
         String sayfa = "customer_info";
-//      DATALARI EXCEL UTILS METOTLARINI KULLANARAK BURAYA ALACAZ
+//        DATALARI EXCEL UTILS METOTLARINI KULLANARAK BURAYA ALACAZ
+
         excelUtils = new ExcelUtils(path,sayfa);
 
-        //excel datalarini getDataList methodu ile cekelim
+//        excel datalarini getDataList metotu ile cekelim
         excelDatalari = excelUtils.getDataList();
 
-        //LOOP KULLANARAK DATALARI TEK TEK TEST CASEDE KULLAN
-        for(Map<String,String> data : excelDatalari){
-            login(); // Her loopda Login safasina goturece
+//        LOOP KULLANARAK DATALARI TEK TEK TEST CASEDE KULLNA
+        for (Map<String,String> data : excelDatalari){
+            login();//Her Loopda Login Sayfasina Goturecek
 
-//          kullanici adini gir
+//            kullanici adini gir
+            ReusableMethods.waitFor(1);
             blueRentalLoginPage.emailBox.sendKeys(data.get("username"));
-            ReusableMethods.waitFor(1);
 
-//          kullanici sifresini gir
-            blueRentalLoginPage.passwordBox.sendKeys("password");
+//            kullanici sifresini gir
             ReusableMethods.waitFor(1);
+            blueRentalLoginPage.passwordBox.sendKeys(data.get("password"));
 
-//          login butonuna tikla
+//            ligin buttonuna tikla
+            ReusableMethods.waitFor(1);
             blueRentalLoginPage.loginButton.click();
             ReusableMethods.waitFor(1);
         }
-
-
-
-
     }
+}
 
 
-       /*
+        /*
         sam.walker@bluerentalcars.com   c!fas_art
         kate.brown@bluerentalcars.com   tad1$Fas
         raj.khan@bluerentalcars.com v7Hg_va^
@@ -105,19 +107,18 @@ public class Day23_ExcelLogin {
 
         ------ILK GIRIS---------
         HOME PAGE DEYIZ
-        home page logine tikla  --->> try catch
+        home page logine tikla --->>> try catch
         LOGIN PAGE DEYIZ
         kullanici adini gir(excelden al)
         kullanici sifresini git(excelden al)
         login page login buttonuna tikla
 
-
         ------2. GIRIS-----
         HOME PAGE DEYIZ
-        kullanici ID ye tikla   --->> try catch
-        Logout linkine tikla    --->> try catch
-        OK e tikla          --->> try catch
-        home page logine tikla--->> try catch
+        kullanici ID ye tikla      --->>> try catch
+        Logout linkine tikla       --->>> try catch
+        OK e tikla                --->>> try catch
+        home page logine tikla    --->>> try catch
         LOGIN PAGE DEYIZ
         kullanici adini gir(excelden al)
         kullanici sifresini git(excelden al)
@@ -146,10 +147,8 @@ public class Day23_ExcelLogin {
         kullanici adini gir(excelden al)
         kullanici sifresini git(excelden al)
         login page login buttonuna tikla
+         */
 
 
 
-     */
 
-
-}
