@@ -35,7 +35,7 @@ public class ExcelUtils {
 
 
     //    Excel deki verileri List olarak almamizi saglar
-//    Exceldeki verileri Test sinifinda kullanmak icin bu metotu kullanacaz
+    //    Exceldeki verileri Test sinifinda kullanmak icin bu metotu kullanacaz
     public List<Map<String, String>> getDataList() {
         // getting all columns
         List<String> columns = getColumnsNames();
@@ -56,7 +56,7 @@ public class ExcelUtils {
         return data;
     }
 
-    //===============exceldeki toplan sutun sayisini return eder=================
+    //===============exceldeki toplam sutun sayisini return eder=================
     public int columnCount() {
         //getting how many numbers in row 1
         return workSheet.getRow(0).getLastCellNum();
@@ -100,7 +100,7 @@ public class ExcelUtils {
         return columns;
     }
 
-    //=========Deger, Satir, Sutun girindiginde, O satur ve sutuna girilen veriyi ekler===============//
+    //=========Deger, Satir, Sutun girindiginde, o satır ve sutuna girilen veriyi ekler===============//
     public void setCellData(String value, int rowNum, int colNum) {
         Cell cell;
         Row row;
@@ -127,7 +127,7 @@ public class ExcelUtils {
         setCellData(value, row, column);
     }
 
-    //    Exceldeki datalari basliksiz olarak 2 boyurlu array seklinde return eder
+    //    Exceldeki datalari basliksiz olarak 2 boyutlu array seklinde return eder
     public String[][] getDataArrayWithoutFirstRow() {
         String[][] data = new String[rowCount()-1][columnCount()];
         for (int i = 1; i < rowCount(); i++) {
