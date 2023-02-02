@@ -27,7 +27,7 @@ public class Day21_TechproLoginTest {
     TechproLoginPage techproLoginPage;
     TechproHomePage techproHomePage;
 
-    @Test
+    @Test(groups = "regression-tests")
     public void loginTest(){
 
         techproLoginPage =new TechproLoginPage();

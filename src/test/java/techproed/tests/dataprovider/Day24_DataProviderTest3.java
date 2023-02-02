@@ -19,7 +19,7 @@ public class Day24_DataProviderTest3 {
     @DataProvider
     public Object[][] customerData(){
 
-        // DataProviderTEst2 ile bu method arasindaki tek fark bu methodda datalar Excel'den gelir
+        // DataProviderTest2 ile bu method arasindaki tek fark bu methodda datalar Excel'den gelir
         // Bu kullanim daha güzeldir
         String path = "./src/test/java/resources/mysmoketestdata.xlsx";
         String sheetName = "customer_info";
@@ -41,16 +41,20 @@ public class Day24_DataProviderTest3 {
         blueRentalHomePage= new BlueRentalHomePage();
         blueRentalLoginPage = new BlueRentalLoginPage();
         blueRentalHomePage.loginLink.click();
+
         ReusableMethods.waitFor(1);// 1 saniye bekle
         blueRentalLoginPage.emailBox.sendKeys(email);
+
         ReusableMethods.waitFor(1);
         blueRentalLoginPage.passwordBox.sendKeys(sifre);
+
         ReusableMethods.waitFor(1);
         blueRentalLoginPage.loginButton.click();
 
         //            GIRIS YAPILDI
         ReusableMethods.waitFor(1);
         ReusableMethods.verifyElementDisplayed(blueRentalHomePage.userID);//ASSERTION
+
         ReusableMethods.waitFor(1);
         ReusableMethods.getScreenshot("EkranGoruntusu");
         ReusableMethods.waitFor(1);

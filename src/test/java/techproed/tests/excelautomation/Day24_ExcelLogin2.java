@@ -22,6 +22,7 @@ public class Day24_ExcelLogin2 {
         excelUtils=new ExcelUtils(path,sayfa);
         excelDatalari=excelUtils.getDataList();
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
+
 //        home page logine tikla
         for (Map<String,String> data:excelDatalari) {
             //        Sayfaya git
@@ -29,12 +30,16 @@ public class Day24_ExcelLogin2 {
             blueRentalHomePage= new BlueRentalHomePage();
             blueRentalLoginPage = new BlueRentalLoginPage();
             blueRentalHomePage.loginLink.click();
+
             ReusableMethods.waitFor(1);// 1 saniye bekle
             blueRentalLoginPage.emailBox.sendKeys(data.get("username"));
+
             ReusableMethods.waitFor(1);
             blueRentalLoginPage.passwordBox.sendKeys(data.get("password"));
+
             ReusableMethods.waitFor(1);
             blueRentalLoginPage.loginButton.click();
+
             //            GIRIS YAPILDI
             ReusableMethods.waitFor(1);
             ReusableMethods.verifyElementDisplayed(blueRentalHomePage.userID);//ASSERTION

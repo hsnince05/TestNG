@@ -43,25 +43,34 @@ public class Day24_DataProviderTest2 {
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));//HOME SAYFASINA
         blueRentalHomePage= new BlueRentalHomePage();
         blueRentalLoginPage = new BlueRentalLoginPage();
+
         blueRentalHomePage.loginLink.click();
         ReusableMethods.waitFor(1);// 1 saniye bekle
+
         blueRentalLoginPage.emailBox.sendKeys(email);
         ReusableMethods.waitFor(1);
+
         blueRentalLoginPage.passwordBox.sendKeys(sifre);
         ReusableMethods.waitFor(1);
+
         blueRentalLoginPage.loginButton.click();
 
         //            GIRIS YAPILDI
         ReusableMethods.waitFor(1);
         ReusableMethods.verifyElementDisplayed(blueRentalHomePage.userID);//ASSERTION
+
         ReusableMethods.waitFor(1);
         ReusableMethods.getScreenshot("EkranGoruntusu");
+
         ReusableMethods.waitFor(1);
         blueRentalHomePage.userID.click();
+
         ReusableMethods.waitFor(1);
         blueRentalHomePage.logOutLink.click();
+
         ReusableMethods.waitFor(1);
         blueRentalHomePage.OK.click();
+
         Driver.closeDriver();
     }
 
