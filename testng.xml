@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Hasan �NCE/IdeaProjects/B103TestNGProject/src/test/java/techproed/tests/smoketests">
+        <classes>
+            <class name="techproed.tests.smoketests.Day22_Negative_Login">
+                <methods>
+                    <include name="US100208_Negative_Login"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.smoketests.Day22_PositiveLoginTest">
+                <methods>
+                    <include name="US100201_Admin_Login"/>
+                </methods>
+            </class>
+            <class name="techproed.tests.smoketests.Negative_Login_Odev1">
+                <methods>
+                    <include name="us100402_Negative_Login"/>
+                    <include name="us101122_Negative_Login"/>
+                    <include name="us101201_Negative_Login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
