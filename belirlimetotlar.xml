@@ -15,4 +15,4 @@
         <!--include olan metot isimlerini calistirir digerlerini calistirmaz
              <include name="test7"/> sadece test7 yi calistir.
             exclude : exlude olan metotlarin disindakilerin hepsini calistir
-            <exclude name="test7"/> test7 nin haricindekiu tum metotlari calistir-->
+            <exclude name="test7"/> test7 nin haricindeki tum metotlari calistir-->
