@@ -24,7 +24,6 @@ public class Day24_DataProviderTest2 {
         return musteriBilgileri;
     }
 
-
     //    TEST
     @Test(dataProvider = "customerData")
     public void dataProviderTest(String email, String password){

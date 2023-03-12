@@ -19,8 +19,12 @@ public class Driver {
         if (driver==null){
             switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
+//                    WebDriverManager.chromedriver().setup();
+//                    driver = new ChromeDriver();
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    driver = new ChromeDriver(options);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();

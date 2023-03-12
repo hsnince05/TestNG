@@ -1,6 +1,11 @@
 package techproed.tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
+import techproed.utilities.Driver;
+
+import java.util.List;
 
 public class Day19_TestNGAnnotations {
 
